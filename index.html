@@ -22,7 +22,7 @@
             <h1>THE BIG <span class="highlight">4-0</span><br>WEEKENDER</h1>
             
             <div class="countdown" id="countdown"></div>
-            <a href="#rsvp" class="btn">Confirm Attendance</a>
+            <a href="#rsvp" class="btn">Gan On Then, RSVP</a>
         </div>
     </header>
 
@@ -84,7 +84,7 @@
     <section class="split-section">
         <div class="split-content" style="background: #111;">
             <h2>The <span class="highlight">Soundtrack</span></h2>
-            <p>Strictly no boring tunes. From sunset soul on the terrace to industrial beats inside.</p>
+            <p>Nee boring tunes. From sunset soul on the terrace to industrial beats inside.</p>
             <p><strong>Timeline:</strong><br>17:00 - Terrace Vibes<br>20:00 - Volume Up<br>23:00 - Lights Out</p>
         </div>
         <div class="split-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
@@ -119,7 +119,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>Private event at <a href="https://www.thegrovenewcastle.co.uk/" target="_blank" rel="noopener">The Grove Newcastle</a></p>
+            <p>Invite-only at <a href="https://www.thegrovenewcastle.co.uk/" target="_blank" rel="noopener">The Grove, Newcastle</a></p>
             <p class="footer-date" data-date-format="footer">Loading...</p>
         </div>
     </footer>
@@ -239,7 +239,7 @@
             
             if (nameInput) {
                 nameInput.addEventListener('invalid', function() {
-                    this.setCustomValidity('We need this one, mate');
+                    this.setCustomValidity('Howay man, fill this in like');
                 });
                 nameInput.addEventListener('input', function() {
                     this.setCustomValidity('');
@@ -248,7 +248,7 @@
             
             if (responseSelect) {
                 responseSelect.addEventListener('invalid', function() {
-                    this.setCustomValidity('We need this one, mate');
+                    this.setCustomValidity('Howay man, fill this in like');
                 });
                 responseSelect.addEventListener('change', function() {
                     this.setCustomValidity('');
@@ -257,7 +257,7 @@
             
             if (consentCheckbox) {
                 consentCheckbox.addEventListener('invalid', function() {
-                    this.setCustomValidity('We need this one, mate');
+                    this.setCustomValidity('Divvent skip this one pet');
                 });
                 consentCheckbox.addEventListener('change', function() {
                     this.setCustomValidity('');
@@ -283,14 +283,14 @@
                 .then(data => {
                     // SUCCESS!
                     form.reset(); 
-                    alert("BOOM. You're on the list. See you in the Ouseburn.");
+                    alert("Mint! You're on the list. See you in the Ouseburn.");
                     submitBtn.innerText = originalBtnText;
                     submitBtn.disabled = false;
                 })
                 .catch(error => {
                     // ERROR
                     console.error('Error!', error.message);
-                    alert("Glitch in the matrix. Try again or DM me.");
+                    alert("Ah man, that's not worked. Try again or give us a shout.");
                     submitBtn.innerText = originalBtnText;
                     submitBtn.disabled = false;
                 });
