@@ -3,21 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>THE 4-0 | The Grove Newcastle</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome</h1>
-        </header>
-        <main>
-            <p>This is a basic website structure for GitHub Pages.</p>
-        </main>
-        <footer>
-            <p>&copy; 2024</p>
-        </footer>
-    </div>
+
+    <header class="hero">
+        <div id="hero-drop" class="droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+            <img src="images/hero-background.png" alt="The Grove" class="uploaded-img">
+            <div class="drop-instruction" style="display: none;">Drag & Drop<br>Hero Image Here</div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+            <p>SUNDAY MAY 24, 2026 // NEWCASTLE UPON TYNE</p>
+            <h1>THE BIG <span class="highlight">4-0</span><br>WEEKENDER</h1>
+            
+            <div class="countdown" id="countdown"></div>
+            <a href="#rsvp" class="btn">Confirm Attendance</a>
+        </div>
+    </header>
+
+    <section class="vibe">
+        <div class="container vibe-grid">
+            <div class="vibe-text">
+                <h2>The <span class="highlight">Location</span></h2>
+                <p>We are taking over the <strong>Cocktail Bar & Terrace at The Grove</strong>. Where Byker meets the Ouseburn.</p>
+                <p>Industrial chic. Exposed brick. Private rooftop terrace for the sunset. This is a sophisticated rager, not a quiet pint.</p>
+                <ul>
+                    <li>✓ Private Terrace [cite: 31, 36]</li>
+                    <li>✓ 18-Tap Bar & Cocktails [cite: 15, 16]</li>
+                    <li>✓ Industrial Aesthetic [cite: 31]</li>
+                </ul>
+            </div>
+            <div class="vibe-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+                <img src="images/venue-terrace.png" alt="Rooftop Terrace" class="uploaded-img">
+                <div class="drop-instruction" style="display: none;">Drag Venue/Terrace Image Here</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hosts">
+        <div class="container">
+            <h2>The <span class="highlight">Architects</span></h2>
+            <div class="hosts-grid">
+                <div class="host-card">
+                    <div class="droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+                        <div class="drop-instruction">Drag Individual<br>Portrait Here</div>
+                    </div>
+                    <h3>The Birthday Boy</h3>
+                </div>
+                <div class="host-card">
+                    <div class="droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+                        <div class="drop-instruction">Drag Individual<br>Portrait Here</div>
+                    </div>
+                    <h3>The Other One</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="split-section">
+        <div class="split-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+            <img src="images/pizza-food.jpg" alt="Byker Slice Pizza" class="uploaded-img">
+            <div class="drop-instruction" style="display: none;">Drag Food/Pizza Image Here</div>
+        </div>
+        <div class="split-content">
+            <h2>The <span class="highlight">Fuel</span></h2>
+            <p>No sit-down dinners. No boring speeches.</p>
+            <p>We've partnered with <strong>Byker Slice</strong> [cite: 45] to sling gourmet rustic pizzas, flanked by The Grove's premium cocktail menu.</p>
+            <p><strong>The Bar:</strong> Open Tab. Signature Cocktails.</p>
+        </div>
+    </section>
+
+    <section class="split-section">
+        <div class="split-content" style="background: #111;">
+            <h2>The <span class="highlight">Soundtrack</span></h2>
+            <p>Strictly no boring tunes. From sunset soul on the terrace to industrial beats inside.</p>
+            <p><strong>Timeline:</strong><br>17:00 - Terrace Vibes<br>20:00 - Volume Up<br>23:00 - Lights Out</p>
+        </div>
+        <div class="split-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
+            <img src="images/dj-party.png" alt="DJ Setup" class="uploaded-img">
+            <div class="drop-instruction" style="display: none;">Drag DJ/Party Image Here</div>
+        </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+        <div class="container">
+            <h2>ARE YOU IN?</h2>
+            <p style="margin-bottom: 30px; color: #888;">May 24, 2026. Guestlist locked to 80.</p>
+            <form class="rsvp-form" onsubmit="event.preventDefault(); alert('This is a prototype form!');">
+                <input type="text" placeholder="Your Full Name" required>
+                <select>
+                    <option>I'm there.</option>
+                    <option>Sadly, I can't make it.</option>
+                </select>
+                <button type="submit" class="btn">Send RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // --- COUNTDOWN LOGIC ---
+        var countDownDate = new Date("May 24, 2026 17:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            document.getElementById("countdown").innerHTML = 
+                `<div class="time-unit"><span class="time-val">${days}</span><span class="time-label">Days</span></div>` +
+                `<div class="time-unit"><span class="time-val">${hours}</span><span class="time-label">Hours</span></div>`;
+
+            if (distance < 0) { clearInterval(x); document.getElementById("countdown").innerHTML = "PARTY TIME"; }
+        }, 1000);
+
+        // --- DRAG AND DROP LOGIC ---
+        function dragOverHandler(ev) {
+            ev.preventDefault();
+            ev.currentTarget.classList.add('drag-over');
+        }
+
+        function dropHandler(ev, el) {
+            ev.preventDefault();
+            el.classList.remove('drag-over');
+
+            if (ev.dataTransfer.items) {
+                [...ev.dataTransfer.items].forEach((item, i) => {
+                    if (item.kind === 'file') {
+                        const file = item.getAsFile();
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            // Check if image already exists, if so replace src, else create it
+                            let img = el.querySelector('img.uploaded-img');
+                            if (!img) {
+                                img = document.createElement('img');
+                                img.classList.add('uploaded-img');
+                                el.appendChild(img);
+                            }
+                            img.src = e.target.result;
+                            
+                            // Hide instruction text
+                            const text = el.querySelector('.drop-instruction');
+                            if(text) text.style.display = 'none';
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        }
+        
+        // Add "leave" event to remove hover style
+        document.querySelectorAll('.droppable-area').forEach(area => {
+            area.addEventListener('dragleave', () => area.classList.remove('drag-over'));
+        });
+    </script>
 </body>
 </html>
-
