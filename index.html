@@ -33,9 +33,10 @@
                 <p>We are taking over the <strong>Cocktail Bar & Terrace at The Grove</strong>. Where Byker meets the Ouseburn.</p>
                 <p>Industrial chic. Exposed brick. Private rooftop terrace for the sunset. This is a sophisticated rager, not a quiet pint.</p>
                 <ul>
-                    <li>✓ Private Terrace [cite: 31, 36]</li>
-                    <li>✓ 18-Tap Bar & Cocktails [cite: 15, 16]</li>
-                    <li>✓ Industrial Aesthetic [cite: 31]</li>
+                    <li>Private Rooftop Terrace</li>
+                    <li>Premium Cocktail Bar</li>
+                    <li>Industrial Warehouse Aesthetic</li>
+                    <li>Capacity: 80 Guests</li>
                 </ul>
             </div>
             <div class="vibe-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
@@ -73,7 +74,7 @@
         <div class="split-content">
             <h2>The <span class="highlight">Fuel</span></h2>
             <p>No sit-down dinners. No boring speeches.</p>
-            <p>We've partnered with <strong>Byker Slice</strong> [cite: 45] to sling gourmet rustic pizzas, flanked by The Grove's premium cocktail menu.</p>
+            <p>We've partnered with <strong>Byker Slice</strong> to sling gourmet rustic pizzas, flanked by The Grove's premium cocktail menu.</p>
             <p><strong>The Bar:</strong> Open Tab. Signature Cocktails.</p>
         </div>
     </section>
@@ -93,17 +94,25 @@
     <section class="rsvp" id="rsvp">
         <div class="container">
             <h2>ARE YOU IN?</h2>
-            <p style="margin-bottom: 30px; color: #888;">May 24, 2026. Guestlist locked to 80.</p>
-            <form class="rsvp-form" onsubmit="event.preventDefault(); alert('This is a prototype form!');">
+            <p class="rsvp-subtitle">May 24, 2026. Guestlist locked to 80.</p>
+            <form class="rsvp-form" onsubmit="event.preventDefault(); alert('RSVP received! We\'ll be in touch.');">
                 <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Your Email" required>
                 <select>
-                    <option>I'm there.</option>
+                    <option>Hell yes, I'm there.</option>
                     <option>Sadly, I can't make it.</option>
                 </select>
-                <button type="submit" class="btn">Send RSVP</button>
+                <button type="submit" class="btn">Confirm RSVP</button>
             </form>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Private event at <a href="https://www.thegrovenewcastle.co.uk/" target="_blank" rel="noopener">The Grove Newcastle</a></p>
+            <p class="footer-date">Sunday, May 24, 2026 • Cocktail Bar & Terrace</p>
+        </div>
+    </footer>
 
     <script>
         // --- COUNTDOWN LOGIC ---
@@ -114,9 +123,11 @@
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("countdown").innerHTML = 
                 `<div class="time-unit"><span class="time-val">${days}</span><span class="time-label">Days</span></div>` +
-                `<div class="time-unit"><span class="time-val">${hours}</span><span class="time-label">Hours</span></div>`;
+                `<div class="time-unit"><span class="time-val">${hours}</span><span class="time-label">Hours</span></div>` +
+                `<div class="time-unit"><span class="time-val">${minutes}</span><span class="time-label">Mins</span></div>`;
 
             if (distance < 0) { clearInterval(x); document.getElementById("countdown").innerHTML = "PARTY TIME"; }
         }, 1000);
