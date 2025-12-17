@@ -96,14 +96,14 @@
         <div class="container">
             <h2>ARE YOU IN?</h2>
             <p class="rsvp-subtitle" data-date-format="rsvp">Loading...</p>
-            <form class="rsvp-form" onsubmit="event.preventDefault(); alert('RSVP received! We\'ll be in touch.');">
-                <input type="text" placeholder="Your Full Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <select>
-                    <option>Hell yes, I'm there.</option>
-                    <option>Sadly, I can't make it.</option>
+            <form name="rsvp-form" class="rsvp-form">
+                <input type="text" name="Name" placeholder="Your Full Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <select name="Response" required>
+                    <option value="Hell yes">Hell yes, I'm there.</option>
+                    <option value="Can't make it">Sadly, I can't make it.</option>
                 </select>
-                <textarea placeholder="Music Request" rows="4"></textarea>
+                <input type="text" name="Song Request" placeholder="Music Request (one track that guarantees you dance)">
                 <button type="submit" class="btn">Confirm RSVP</button>
             </form>
         </div>
@@ -221,6 +221,37 @@
         // Add "leave" event to remove hover style
         document.querySelectorAll('.droppable-area').forEach(area => {
             area.addEventListener('dragleave', () => area.classList.remove('drag-over'));
+        });
+
+        // --- GOOGLE SHEETS RSVP INTEGRATION ---
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxTNNcJTp-t29m0_BxcX0oI1_oNvwSbHP56IwlXMDhUZt8UX5CO-DgqkG3KP-U8cimP/exec';
+        const form = document.forms['rsvp-form'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Visual feedback: Change button text
+            const submitBtn = form.querySelector('button');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "LOCKING IT IN...";
+            submitBtn.disabled = true; // Prevent double-submission
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => response.json())
+                .then(data => {
+                    // SUCCESS!
+                    form.reset(); 
+                    alert("BOOM. You're on the list. See you in the Ouseburn.");
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                })
+                .catch(error => {
+                    // ERROR
+                    console.error('Error!', error.message);
+                    alert("Glitch in the matrix. Try again or DM me.");
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     </script>
 </body>
