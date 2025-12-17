@@ -8,7 +8,15 @@
 - ✅ Deleted original `gemini.html` file
 - ✅ Maintained all functionality (countdown, drag-drop, RSVP form)
 
-### 2. Image Selection & Integration
+### 2. Recent Enhancements (Dec 2025)
+- ✅ Implemented dynamic date formatting system (single source of truth)
+- ✅ Added seconds to countdown timer
+- ✅ Integrated Google Sheets RSVP backend
+- ✅ Added music request field to RSVP form
+- ✅ Updated venue terrace image
+- ✅ Removed capacity from venue details section
+
+### 3. Image Selection & Integration
 Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 
 | Purpose | File | Why Selected |
@@ -19,7 +27,7 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 | Soundtrack Section | `dj-party.png` | DJ booth visible, industrial aesthetic |
 | Bonus | `bar-interior.jpeg` | Alternative bar shot (not currently used) |
 
-### 3. Project Structure
+### 4. Project Structure
 ```
 40th-birthday-party-grove/
 ├── index.html              # Main page (ready for GitHub Pages)
@@ -41,10 +49,12 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 ## 🎯 What Works Right Now
 
 1. **Fully Functional Website**
-   - Countdown timer to May 24, 2026
+   - Countdown timer to May 24, 2026 (with seconds)
+   - Dynamic date formatting across all sections
    - Responsive mobile design
    - All venue images load automatically
    - Drag-and-drop still works for image replacement
+   - Google Sheets RSVP integration with music requests
 
 2. **GitHub Pages Ready**
    - Single `index.html` entry point
@@ -68,7 +78,6 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 
 ### Important
 - **Host Names**: Update "The Birthday Boy" and "The Other One" to actual names
-- **RSVP Backend**: Form currently shows alert, needs real submission handling
 
 ### Optional
 - **Image Optimization**: Run `optimize-images.sh` to reduce 16MB → ~4-5MB

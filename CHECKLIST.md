@@ -11,8 +11,11 @@
 - [x] Configure .gitignore for GitHub
 - [x] Create documentation (README, DEPLOYMENT, SUMMARY)
 - [x] Verify responsive design
-- [x] Test countdown timer functionality
+- [x] Test countdown timer functionality (includes seconds)
 - [x] Verify drag-and-drop still works
+- [x] Implement dynamic date formatting
+- [x] Integrate Google Sheets RSVP backend
+- [x] Add music request field to RSVP form
 
 ## 🔲 Before First Deployment
 
@@ -28,19 +31,19 @@
 
 - [ ] Add individual host photos (currently placeholders)
 - [ ] Update host names in "The Architects" section
-  - Line 280: Change "The Birthday Boy" to actual name
-  - Line 286: Change "The Other One" to actual name
+  - Line 58: Change "The Birthday Boy" to actual name
+  - Line 65: Change "The Other One" to actual name
 - [ ] Verify event details are correct:
   - [ ] Date: Sunday May 24, 2026
   - [ ] Time: 17:00 (5 PM)
   - [ ] Venue: The Grove, Newcastle upon Tyne
-- [ ] Test RSVP form (currently shows alert)
+- [x] Test RSVP form (Google Sheets integration active)
 - [ ] Consider privacy for faces in venue photos
 
 ## 🔲 Optional Enhancements
 
 - [ ] Optimize images (reduce from 16MB to ~4-5MB)
-- [ ] Add functional RSVP backend (Formspree, Google Forms, etc.)
+- [x] Add functional RSVP backend (Google Sheets integration complete)
 - [ ] Add Google Analytics tracking
 - [ ] Create custom domain (instead of github.io)
 - [ ] Add social media meta tags for sharing
@@ -53,6 +56,7 @@
 
 **Ready to Deploy**: YES ✅
 **Ready to Share**: NO ⚠️ (needs host photos and names)
+**RSVP Functional**: YES ✅ (Google Sheets integration active)
 
 **Estimated time to deployment**: 5 minutes
 **Estimated time to guest-ready**: 30 minutes (with host photos)

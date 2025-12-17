@@ -135,8 +135,8 @@
             };
             
             switch(format) {
-                case 'hero': // "SUNDAY MAY 24, 2026 // NEWCASTLE UPON TYNE"
-                    return `${EVENT_CONFIG.date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.getDate()}, ${EVENT_CONFIG.date.getFullYear()} // ${EVENT_CONFIG.venue.toUpperCase()}`;
+                case 'hero': // "SUNDAY MAY 24, 2026 // THE GROVE"
+                    return `${EVENT_CONFIG.date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.getDate()}, ${EVENT_CONFIG.date.getFullYear()} // THE GROVE`;
                 
                 case 'rsvp': // "May 24, 2026. Guestlist locked to 80."
                     return EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '. Guestlist locked to 80.';

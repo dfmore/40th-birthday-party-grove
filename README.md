@@ -30,11 +30,12 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 
 ## ✨ Features
 
-- **Countdown Timer**: Live countdown to event date
+- **Countdown Timer**: Live countdown to event date (includes seconds)
+- **Dynamic Date Formatting**: Single source of truth for event date across all sections
 - **Drag & Drop Images**: Replace any image by dragging a new one onto it
 - **Responsive Design**: Mobile-first, works on all devices
 - **Dark Industrial Theme**: Custom color scheme matching The Grove's aesthetic
-- **RSVP Form**: Guest confirmation (currently prototype - needs backend)
+- **RSVP Form**: Google Sheets integration with music requests
 
 ## 🎨 Design
 
@@ -45,9 +46,8 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 ## 📝 TODO
 
 - [ ] Add individual host portrait photos (currently placeholders)
-- [ ] Implement RSVP form backend
-- [ ] Consider AI face replacement for privacy in venue photos
 - [ ] Add actual host names to "The Architects" section
+- [ ] Consider AI face replacement for privacy in venue photos
 
 ## 🌐 GitHub Pages Deployment
 
