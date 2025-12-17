@@ -231,6 +231,40 @@
             area.addEventListener('dragleave', () => area.classList.remove('drag-over'));
         });
 
+        // --- CUSTOM VALIDATION MESSAGES ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameInput = document.querySelector('input[name="Name"]');
+            const responseSelect = document.querySelector('select[name="Response"]');
+            const consentCheckbox = document.querySelector('input[name="Consent"]');
+            
+            if (nameInput) {
+                nameInput.addEventListener('invalid', function() {
+                    this.setCustomValidity('We need this one, mate');
+                });
+                nameInput.addEventListener('input', function() {
+                    this.setCustomValidity('');
+                });
+            }
+            
+            if (responseSelect) {
+                responseSelect.addEventListener('invalid', function() {
+                    this.setCustomValidity('We need this one, mate');
+                });
+                responseSelect.addEventListener('change', function() {
+                    this.setCustomValidity('');
+                });
+            }
+            
+            if (consentCheckbox) {
+                consentCheckbox.addEventListener('invalid', function() {
+                    this.setCustomValidity('We need this one, mate');
+                });
+                consentCheckbox.addEventListener('change', function() {
+                    this.setCustomValidity('');
+                });
+            }
+        });
+
         // --- GOOGLE SHEETS RSVP INTEGRATION ---
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxTNNcJTp-t29m0_BxcX0oI1_oNvwSbHP56IwlXMDhUZt8UX5CO-DgqkG3KP-U8cimP/exec';
         const form = document.forms['rsvp-form'];
