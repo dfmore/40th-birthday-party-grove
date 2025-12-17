@@ -18,7 +18,7 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content container">
-            <p>SUNDAY MAY 24, 2026 // NEWCASTLE UPON TYNE</p>
+            <p data-date-format="hero">Loading...</p>
             <h1>THE BIG <span class="highlight">4-0</span><br>WEEKENDER</h1>
             
             <div class="countdown" id="countdown"></div>
@@ -95,7 +95,7 @@
     <section class="rsvp" id="rsvp">
         <div class="container">
             <h2>ARE YOU IN?</h2>
-            <p class="rsvp-subtitle">May 24, 2026</p>
+            <p class="rsvp-subtitle" data-date-format="rsvp">Loading...</p>
             <form class="rsvp-form" onsubmit="event.preventDefault(); alert('RSVP received! We\'ll be in touch.');">
                 <input type="text" placeholder="Your Full Name" required>
                 <input type="email" placeholder="Your Email" required>
@@ -103,6 +103,7 @@
                     <option>Hell yes, I'm there.</option>
                     <option>Sadly, I can't make it.</option>
                 </select>
+                <textarea placeholder="Music Request" rows="4"></textarea>
                 <button type="submit" class="btn">Confirm RSVP</button>
             </form>
         </div>
@@ -111,13 +112,59 @@
     <footer class="site-footer">
         <div class="container">
             <p>Private event at <a href="https://www.thegrovenewcastle.co.uk/" target="_blank" rel="noopener">The Grove Newcastle</a></p>
-            <p class="footer-date">Sunday, May 24, 2026 • Cocktail Bar & Terrace</p>
+            <p class="footer-date" data-date-format="footer">Loading...</p>
         </div>
     </footer>
 
     <script>
+        // --- EVENT CONFIGURATION (Single Source of Truth) ---
+        const EVENT_CONFIG = {
+            date: new Date('2026-05-24T17:00:00'), // ISO 8601 format for consistency
+            venue: 'Newcastle upon Tyne',
+            location: 'Cocktail Bar & Terrace'
+        };
+
+        // --- DATE FORMATTING UTILITIES ---
+        function formatEventDate(format) {
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            
+            switch(format) {
+                case 'hero': // "SUNDAY MAY 24, 2026 // NEWCASTLE UPON TYNE"
+                    return `${EVENT_CONFIG.date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.getDate()}, ${EVENT_CONFIG.date.getFullYear()} // ${EVENT_CONFIG.venue.toUpperCase()}`;
+                
+                case 'rsvp': // "May 24, 2026"
+                    return EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                
+                case 'footer': // "Sunday, May 24, 2026 • Cocktail Bar & Terrace"
+                    return `${EVENT_CONFIG.date.toLocaleDateString('en-US', options)} • ${EVENT_CONFIG.location}`;
+                
+                default:
+                    return EVENT_CONFIG.date.toLocaleDateString('en-US', options);
+            }
+        }
+
+        // --- INITIALIZE DATE DISPLAYS ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update hero date
+            const heroDate = document.querySelector('.hero-content p');
+            if (heroDate) heroDate.textContent = formatEventDate('hero');
+            
+            // Update RSVP subtitle
+            const rsvpDate = document.querySelector('.rsvp-subtitle');
+            if (rsvpDate) rsvpDate.textContent = formatEventDate('rsvp');
+            
+            // Update footer date
+            const footerDate = document.querySelector('.footer-date');
+            if (footerDate) footerDate.textContent = formatEventDate('footer');
+        });
+
         // --- COUNTDOWN LOGIC ---
-        var countDownDate = new Date("May 24, 2026 17:00:00").getTime();
+        var countDownDate = EVENT_CONFIG.date.getTime();
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
