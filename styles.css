@@ -277,6 +277,42 @@ textarea {
     min-height: 100px;
 }
 
+/* Consent Checkbox */
+.consent-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.consent-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.consent-checkbox span {
+    flex: 1;
+}
+
+.info-icon {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    cursor: help;
+    margin-left: 4px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.info-icon:hover {
+    opacity: 1;
+}
+
 /* FOOTER */
 .site-footer {
     background: #000;
