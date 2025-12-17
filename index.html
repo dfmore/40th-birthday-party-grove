@@ -36,6 +36,7 @@
                     <li>Private Rooftop Terrace</li>
                     <li>Premium Cocktail Bar</li>
                     <li>Industrial Warehouse Aesthetic</li>
+                    <li>Capacity: 80 Guests</li>
                 </ul>
             </div>
             <div class="vibe-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
@@ -137,8 +138,8 @@
                 case 'hero': // "SUNDAY MAY 24, 2026 // NEWCASTLE UPON TYNE"
                     return `${EVENT_CONFIG.date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase()} ${EVENT_CONFIG.date.getDate()}, ${EVENT_CONFIG.date.getFullYear()} // ${EVENT_CONFIG.venue.toUpperCase()}`;
                 
-                case 'rsvp': // "May 24, 2026"
-                    return EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                case 'rsvp': // "May 24, 2026. Guestlist locked to 80."
+                    return EVENT_CONFIG.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '. Guestlist locked to 80.';
                 
                 case 'footer': // "Sunday, May 24, 2026 • Cocktail Bar & Terrace"
                     return `${EVENT_CONFIG.date.toLocaleDateString('en-US', options)} • ${EVENT_CONFIG.location}`;
