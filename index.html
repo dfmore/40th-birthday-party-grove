@@ -36,7 +36,6 @@
                     <li>Private Rooftop Terrace</li>
                     <li>Premium Cocktail Bar</li>
                     <li>Industrial Warehouse Aesthetic</li>
-                    <li>Capacity: 80 Guests</li>
                 </ul>
             </div>
             <div class="vibe-img-container droppable-area" ondrop="dropHandler(event, this)" ondragover="dragOverHandler(event)">
@@ -96,7 +95,7 @@
     <section class="rsvp" id="rsvp">
         <div class="container">
             <h2>ARE YOU IN?</h2>
-            <p class="rsvp-subtitle">May 24, 2026. Guestlist locked to 80.</p>
+            <p class="rsvp-subtitle">May 24, 2026</p>
             <form class="rsvp-form" onsubmit="event.preventDefault(); alert('RSVP received! We\'ll be in touch.');">
                 <input type="text" placeholder="Your Full Name" required>
                 <input type="email" placeholder="Your Email" required>
@@ -124,12 +123,14 @@
             var distance = countDownDate - now;
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
             document.getElementById("countdown").innerHTML = 
                 `<div class="time-unit"><span class="time-val">${days}</span><span class="time-label">Days</span></div>` +
                 `<div class="time-unit"><span class="time-val">${hours}</span><span class="time-label">Hours</span></div>` +
-                `<div class="time-unit"><span class="time-val">${minutes}</span><span class="time-label">Mins</span></div>`;
+                `<div class="time-unit"><span class="time-val">${minutes}</span><span class="time-label">Mins</span></div>` +
+                `<div class="time-unit"><span class="time-val">${seconds}</span><span class="time-label">Secs</span></div>`;
 
             if (distance < 0) { clearInterval(x); document.getElementById("countdown").innerHTML = "PARTY TIME"; }
         }, 1000);
