@@ -30,12 +30,13 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 
 ## ✨ Features
 
-- **Countdown Timer**: Live countdown to event date (includes seconds)
-- **Dynamic Date Formatting**: Single source of truth for event date across all sections
-- **Drag & Drop Images**: Replace any image by dragging a new one onto it
+- **Countdown Timer**: Live countdown with timezone handling (BST)
+- **Dynamic Date Formatting**: Single source of truth for event date
+- **RSVP Form**: Google Sheets integration with consent checkbox & music requests
+- **Geordie Flavour**: Custom validation messages in local dialect
+- **Drag & Drop Images**: Replace any image by dragging a new one
 - **Responsive Design**: Mobile-first, works on all devices
-- **Dark Industrial Theme**: Custom color scheme matching The Grove's aesthetic
-- **RSVP Form**: Google Sheets integration with music requests
+- **Dark Industrial Theme**: Grove Orange (#ff4d00) accents
 
 ## 🎨 Design
 
@@ -46,16 +47,18 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 ## 📝 TODO
 
 - [ ] Add individual host portrait photos (currently placeholders)
-- [ ] Add actual host names to "The Architects" section
-- [ ] Consider AI face replacement for privacy in venue photos
+- [ ] Add actual host names to "The Ringleaders" section
+- [ ] Consider image optimization (currently ~18MB total)
 
-## 🌐 GitHub Pages Deployment
+## 🌐 Deployment
 
-This site is ready for GitHub Pages:
+**Live at:** www.86groove.space (custom domain via GitHub Pages)
+
+Ready for GitHub Pages:
 1. Push to GitHub
 2. Enable Pages in repository settings
 3. Select `main` branch as source
-4. Site will be live at `https://[username].github.io/[repo-name]`
+4. Configure custom domain in CNAME file
 
 ## 📸 Image Credits
 

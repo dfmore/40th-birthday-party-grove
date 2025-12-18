@@ -2,63 +2,52 @@
 
 ## ✅ Current Status
 
-Your website is **ready to deploy** to GitHub Pages!
+**LIVE:** www.86groove.space (GitHub Pages + custom domain)
 
 ### What's Complete:
-- ✅ HTML merged from `gemini.html` into `index.html`
-- ✅ CSS extracted to external `styles.css` file
-- ✅ Original `gemini.html` deleted
-- ✅ 5 high-quality venue images selected and copied to `images/` folder
-- ✅ Images automatically load on page (drag-and-drop still works for replacements)
-- ✅ `.gitignore` configured for GitHub
-- ✅ Project structure optimized for GitHub Pages
-- ✅ Dynamic date formatting system implemented
-- ✅ Countdown timer enhanced with seconds
-- ✅ Google Sheets RSVP integration active
-- ✅ Music request field added to RSVP form
+- ✅ Site deployed at www.86groove.space
+- ✅ Custom domain configured via CNAME
+- ✅ Dynamic date formatting with BST timezone
+- ✅ Google Sheets RSVP with consent checkbox
+- ✅ Geordie dialect validation messages
+- ✅ Enhanced error handling for form submission
+- ✅ Email made optional in RSVP form
+- ✅ Venue image updated to bar interior
+- ✅ Pizza image updated to higher quality
 
-### Selected Images (Maximum Impact):
-1. **Hero Background** (`hero-background.png`) - Packed event showing industrial ceiling and crowd energy
-2. **Terrace** (`venue-terrace.png`) - Rooftop terrace with Newcastle skyline
-3. **Pizza** (`pizza-food.jpg`) - Byker Slice pepperoni pizza
-4. **DJ/Party** (`dj-party.png`) - Bar interior with DJ booth and industrial aesthetic
-5. **Extra** (`bar-interior.jpeg`) - Alternative bar shot (not currently used)
+### Active Images:
+1. **Hero** (`hero-background.png`) - Packed event, industrial ceiling
+2. **Venue** (`bar-interior.jpeg`) - Premium cocktail bar interior
+3. **Pizza** (`pizza-food.jpg`) - Byker Slice pizza (1.2MB)
+4. **DJ** (`dj-party.png`) - Party vibe with DJ booth
+5. **Hosts** (`architect-1.png`, `architect-2.png`) - Placeholder portraits
 
-## 🚀 Deploy to GitHub Pages
+## 🚀 Deployment Status
 
-### Step 1: Commit and Push
+**Live Site:** www.86groove.space
 
+### Custom Domain Setup (Complete)
+1. ✅ CNAME file added with `www.86groove.space`
+2. ✅ DNS configured to point to GitHub Pages
+3. ✅ HTTPS enabled automatically by GitHub
+
+### To Update the Live Site
 ```bash
 git add .
-git commit -m "Add party website with venue images"
+git commit -m "Update description"
 git push origin main
 ```
-
-### Step 2: Enable GitHub Pages
-
-1. Go to your repository on GitHub
-2. Click **Settings** → **Pages**
-3. Under "Source", select **main** branch
-4. Click **Save**
-5. Your site will be live at: `https://[your-username].github.io/40th-birthday-party-grove`
+Changes appear within 1-2 minutes.
 
 ## ⚠️ Important Notes
 
 ### Image Sizes
-Current total: **~16MB**
-- This is acceptable for GitHub but may load slowly on mobile
-- Consider running `bash optimize-images.sh` to reduce to ~4-5MB
-- Optimization maintains quality while improving load times
+Current total: **~18MB**
+- Consider running `bash optimize-images.sh` for faster mobile loading
+- Pizza image recently updated (now 1.2MB)
 
-### Privacy Considerations
-Several venue photos contain visible faces:
-- `hero-background.png` - Crowd faces visible
-- `dj-party.png` - Bartender visible
-
-**Recommendations:**
-1. Use AI face-swapping to replace with party guests
-2. Apply blur/privacy filters before final deployment
-3. Or use these as-is (they're from venue's promotional materials)
+### Privacy Note
+Venue photos are from The Grove's promotional materials and contain visible faces. These are used as-is with standard venue photography expectations.
 
 ### Still Needed: Host Photos
 The "Architects" section has **placeholder boxes** for individual host portraits.
@@ -71,22 +60,22 @@ The "Architects" section has **placeholder boxes** for individual host portraits
 ## 🎨 Customization
 
 ### Update Host Names
-Edit `index.html` lines 58 and 65:
+Edit `index.html` lines 58 and 65 ("The Ringleaders" section):
 ```html
 <h3>The Birthday Boy</h3>  <!-- Change to actual name -->
 <h3>The Other One</h3>      <!-- Change to actual name -->
 ```
 
 ### Update Event Details
-Edit `index.html` line 122-126 (EVENT_CONFIG object):
+Edit `index.html` lines 129-134 (EVENT_CONFIG object):
 ```javascript
 const EVENT_CONFIG = {
-    date: new Date('2026-05-24T17:00:00'),
+    date: new Date('2026-05-24T17:00:00+01:00'), // BST timezone
     venue: 'Newcastle upon Tyne',
     location: 'Cocktail Bar & Terrace'
 };
 ```
-Note: This is now the single source of truth for all dates on the site.
+Note: Includes BST timezone for consistent global display.
 
 ## 🧪 Testing Locally
 
@@ -113,11 +102,12 @@ The site is mobile-responsive. Test on:
 
 **Status**: ✅ **Fully Functional**
 
-The RSVP form is integrated with Google Sheets via Google Apps Script:
-- Submissions are automatically saved to a Google Sheet
-- Form includes: Name, Email, Response (Yes/No), Music Request
+Google Sheets integration with enhanced features:
+- Name (required), Email (optional), Response, Music Request
+- Consent checkbox with privacy info tooltip
+- Custom validation messages in Geordie dialect
+- Enhanced error handling with user-friendly messages
 - Visual feedback during submission ("LOCKING IT IN...")
-- Success/error messages displayed to users
 - Form resets after successful submission
 
 ## 📊 Analytics (Optional)

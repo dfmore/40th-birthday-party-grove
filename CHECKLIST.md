@@ -13,9 +13,13 @@
 - [x] Verify responsive design
 - [x] Test countdown timer functionality (includes seconds)
 - [x] Verify drag-and-drop still works
-- [x] Implement dynamic date formatting
+- [x] Implement dynamic date formatting with BST timezone
 - [x] Integrate Google Sheets RSVP backend
-- [x] Add music request field to RSVP form
+- [x] Add music request field and consent checkbox to RSVP
+- [x] Add Geordie dialect validation messages
+- [x] Configure custom domain (www.86groove.space)
+- [x] Update venue image to bar interior
+- [x] Enhanced RSVP error handling
 
 ## 🔲 Before First Deployment
 
@@ -30,7 +34,7 @@
 ## 🔲 Before Sharing with Guests
 
 - [ ] Add individual host photos (currently placeholders)
-- [ ] Update host names in "The Architects" section
+- [ ] Update host names in "The Ringleaders" section
   - Line 58: Change "The Birthday Boy" to actual name
   - Line 65: Change "The Other One" to actual name
 - [ ] Verify event details are correct:
@@ -42,8 +46,8 @@
 
 ## 🔲 Optional Enhancements
 
-- [ ] Optimize images (reduce from 16MB to ~4-5MB)
-- [x] Add functional RSVP backend (Google Sheets integration complete)
+- [ ] Optimize images (currently ~18MB total)
+- [x] Add functional RSVP backend (complete with consent)
 - [ ] Add Google Analytics tracking
 - [ ] Create custom domain (instead of github.io)
 - [ ] Add social media meta tags for sharing
@@ -54,9 +58,9 @@
 
 ## 🎯 Current Status
 
-**Ready to Deploy**: YES ✅
+**Deployed**: YES ✅ (www.86groove.space)
 **Ready to Share**: NO ⚠️ (needs host photos and names)
-**RSVP Functional**: YES ✅ (Google Sheets integration active)
+**RSVP Functional**: YES ✅ (Google Sheets + consent checkbox)
 
 **Estimated time to deployment**: 5 minutes
 **Estimated time to guest-ready**: 30 minutes (with host photos)

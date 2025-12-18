@@ -9,12 +9,15 @@
 - ✅ Maintained all functionality (countdown, drag-drop, RSVP form)
 
 ### 2. Recent Enhancements (Dec 2025)
-- ✅ Implemented dynamic date formatting system (single source of truth)
+- ✅ Implemented dynamic date formatting with BST timezone handling
 - ✅ Added seconds to countdown timer
-- ✅ Integrated Google Sheets RSVP backend
-- ✅ Added music request field to RSVP form
-- ✅ Updated venue terrace image
-- ✅ Removed capacity from venue details section
+- ✅ Integrated Google Sheets RSVP with consent checkbox
+- ✅ Added Geordie dialect to validation messages
+- ✅ Changed venue image from terrace to bar interior
+- ✅ Updated pizza image to higher quality
+- ✅ Custom domain configured (www.86groove.space)
+- ✅ Enhanced RSVP error handling
+- ✅ Made email optional in RSVP form
 
 ### 3. Image Selection & Integration
 Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
@@ -49,12 +52,13 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 ## 🎯 What Works Right Now
 
 1. **Fully Functional Website**
-   - Countdown timer to May 24, 2026 (with seconds)
-   - Dynamic date formatting across all sections
+   - Live at www.86groove.space
+   - Countdown timer with BST timezone handling
+   - RSVP form with Google Sheets integration
+   - Consent checkbox with privacy info
+   - Custom validation messages (Geordie dialect)
    - Responsive mobile design
-   - All venue images load automatically
-   - Drag-and-drop still works for image replacement
-   - Google Sheets RSVP integration with music requests
+   - Drag-and-drop image replacement
 
 2. **GitHub Pages Ready**
    - Single `index.html` entry point
@@ -71,43 +75,31 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 ## ⚠️ Still Needed
 
 ### Critical
-- **Host Photos**: Two individual portrait-style photos
-  - Current: Empty placeholders with drag-drop enabled
-  - You have: Beach photo with both hosts together
-  - Solution: Use AI to create individual stylized portraits
-
-### Important
-- **Host Names**: Update "The Birthday Boy" and "The Other One" to actual names
+- **Host Photos**: Two individual portrait photos (placeholders active)
+- **Host Names**: Update "The Birthday Boy" and "The Other One" to actual names in "Ringleaders" section
 
 ### Optional
-- **Image Optimization**: Run `optimize-images.sh` to reduce 16MB → ~4-5MB
-- **Face Privacy**: Consider AI face-swapping or blurring in venue photos
+- **Image Optimization**: Run `optimize-images.sh` to reduce ~18MB total
 - **Analytics**: Add Google Analytics tracking
 
-## 📸 About the Hosts Photo
+## 📸 Host Photos
 
-You provided a beach photo with both hosts together. This works great for social sharing but the website design calls for **individual portraits** in the "Architects" section.
+"The Ringleaders" section has placeholder images. Replace with individual portraits:
+1. Use AI to create stylized portraits matching the industrial theme
+2. Save as `images/architect-1.png` and `images/architect-2.png`
+3. Drag-drop onto the live site or commit directly
 
-**Suggested Workflow:**
-1. Use AI (Photoshop, Midjourney, or similar) to:
-   - Separate the two individuals
-   - Create stylized portraits with industrial/urban background
-   - Match the dark, sophisticated vibe of the site
-2. Save as `images/host1.jpg` and `images/host2.jpg`
-3. Update HTML to load them automatically (or just drag-drop them)
+## 🚀 Deployment
 
-## 🚀 Ready to Deploy
+**Already Live:** www.86groove.space
 
-**To go live right now:**
+**To update:**
 ```bash
 git add .
-git commit -m "Add 40th birthday party website"
+git commit -m "Update description"
 git push origin main
 ```
-
-Then enable GitHub Pages in repository settings.
-
-**The site will work immediately** - host photos can be added later via drag-and-drop or by updating the files.
+Changes appear in 1-2 minutes.
 
 ## 📊 Image Analysis Results
 
