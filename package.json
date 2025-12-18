@@ -1,0 +1,12 @@
+{
+  "name": "40th-birthday-party-grove",
+  "version": "1.0.0",
+  "description": "Image optimization for party website",
+  "scripts": {
+    "optimize-images": "node optimize-images.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.1"
+  }
+}
+
