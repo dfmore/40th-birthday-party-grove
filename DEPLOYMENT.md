@@ -6,21 +6,23 @@
 
 ### What's Complete:
 - ✅ Site deployed at www.86groove.space
+- ✅ WebP image optimization (18MB → 1.3MB, 93% reduction)
+- ✅ Picture elements with fallback to original formats
+- ✅ Node.js optimization script (optimize-images.js)
 - ✅ Custom domain configured via CNAME
 - ✅ Dynamic date formatting with BST timezone
 - ✅ Google Sheets RSVP with consent checkbox
 - ✅ Geordie dialect validation messages
 - ✅ Enhanced error handling for form submission
-- ✅ Email made optional in RSVP form
-- ✅ Venue image updated to bar interior
-- ✅ Pizza image updated to higher quality
 
-### Active Images:
-1. **Hero** (`hero-background.png`) - Packed event, industrial ceiling
-2. **Venue** (`bar-interior.jpeg`) - Premium cocktail bar interior
-3. **Pizza** (`pizza-food.jpg`) - Byker Slice pizza (1.2MB)
-4. **DJ** (`dj-party.png`) - Party vibe with DJ booth
-5. **Hosts** (`architect-1.png`, `architect-2.png`) - Placeholder portraits
+### Active Images (WebP + Fallback):
+1. **Hero** (`hero-background.webp` / `.png`) - 383KB / 3MB
+2. **Venue** (`bar-interior.webp` / `.jpeg`) - 150KB / 7.9MB
+3. **Pizza** (`pizza-food.webp` / `.jpg`) - 198KB / 1.2MB
+4. **DJ** (`dj-party.webp` / `.png`) - 127KB / 2.9MB
+5. **Hosts** (`architect-1/2.webp` / `.png`) - 266KB+130KB / 2.6MB+1.2MB
+
+**Total:** 1.3MB WebP vs 18MB originals (93% reduction)
 
 ## 🚀 Deployment Status
 
@@ -41,10 +43,15 @@ Changes appear within 1-2 minutes.
 
 ## ⚠️ Important Notes
 
-### Image Sizes
-Current total: **~18MB**
-- Consider running `bash optimize-images.sh` for faster mobile loading
-- Pizza image recently updated (now 1.2MB)
+### Image Optimization
+**Implemented:** WebP format with `<picture>` fallback
+- WebP images: **1.3MB total** (93% reduction)
+- Original fallbacks: 18MB (for older browsers)
+- Script: `npm run optimize-images` (Node.js + Sharp)
+
+**Browser Support:**
+- Modern browsers: Load WebP (fast)
+- Older browsers: Fallback to PNG/JPG (compatible)
 
 ### Privacy Note
 Venue photos are from The Grove's promotional materials and contain visible faces. These are used as-is with standard venue photography expectations.
@@ -109,6 +116,18 @@ Google Sheets integration with enhanced features:
 - Enhanced error handling with user-friendly messages
 - Visual feedback during submission ("LOCKING IT IN...")
 - Form resets after successful submission
+
+## 🖼️ Image Optimization
+
+**Already Complete:** WebP images with fallback support
+
+To re-run optimization:
+```bash
+npm install
+npm run optimize-images
+```
+
+This generates WebP versions in `images-optimized/` directory.
 
 ## 📊 Analytics (Optional)
 

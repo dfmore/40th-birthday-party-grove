@@ -18,18 +18,18 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 
 ```
 ├── index.html          # Main landing page
-├── styles.css          # All styling (extracted from inline)
-├── images/             # Venue photos and assets
-│   ├── hero-background.png
-│   ├── venue-terrace.png
-│   ├── pizza-food.jpg
-│   ├── dj-party.png
-│   └── SETUP_NOTES.md  # Image documentation
-└── README.md
+├── styles.css          # All styling
+├── images/             # Venue photos (WebP + originals)
+│   ├── *.webp          # Optimized images (~1.3MB total)
+│   ├── *.png/jpg       # Original images (~18MB)
+│   └── SETUP_NOTES.md
+├── optimize-images.js  # Image optimization script
+└── package.json        # Node dependencies
 ```
 
 ## ✨ Features
 
+- **WebP Images**: Optimized images with fallback support (93% size reduction)
 - **Countdown Timer**: Live countdown with timezone handling (BST)
 - **Dynamic Date Formatting**: Single source of truth for event date
 - **RSVP Form**: Google Sheets integration with consent checkbox & music requests
@@ -48,7 +48,6 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 
 - [ ] Add individual host portrait photos (currently placeholders)
 - [ ] Add actual host names to "The Ringleaders" section
-- [ ] Consider image optimization (currently ~18MB total)
 
 ## 🌐 Deployment
 

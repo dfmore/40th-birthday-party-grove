@@ -9,15 +9,15 @@
 - ✅ Maintained all functionality (countdown, drag-drop, RSVP form)
 
 ### 2. Recent Enhancements (Dec 2025)
-- ✅ Implemented dynamic date formatting with BST timezone handling
-- ✅ Added seconds to countdown timer
+- ✅ WebP image optimization (18MB → 1.3MB, 93% reduction)
+- ✅ Picture elements with fallback support
+- ✅ Node.js optimization script with Sharp
+- ✅ Implemented dynamic date formatting with BST timezone
 - ✅ Integrated Google Sheets RSVP with consent checkbox
 - ✅ Added Geordie dialect to validation messages
 - ✅ Changed venue image from terrace to bar interior
-- ✅ Updated pizza image to higher quality
 - ✅ Custom domain configured (www.86groove.space)
 - ✅ Enhanced RSVP error handling
-- ✅ Made email optional in RSVP form
 
 ### 3. Image Selection & Integration
 Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
@@ -33,20 +33,17 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 ### 4. Project Structure
 ```
 40th-birthday-party-grove/
-├── index.html              # Main page (ready for GitHub Pages)
+├── index.html              # Main page with WebP support
 ├── styles.css              # All styling
-├── images/                 # Venue photos (16MB total)
-│   ├── hero-background.png
-│   ├── venue-terrace.png
-│   ├── pizza-food.jpg
-│   ├── dj-party.png
-│   ├── bar-interior.jpeg
+├── images/                 # Optimized + original images
+│   ├── *.webp              # Optimized (1.3MB total)
+│   ├── *.png/jpg           # Originals (18MB fallback)
 │   └── SETUP_NOTES.md
-├── .gitignore             # GitHub configuration
-├── README.md              # Project documentation
-├── DEPLOYMENT.md          # Deployment instructions
-├── optimize-images.sh     # Optional image optimization
-└── SUMMARY.md             # This file
+├── optimize-images.js      # Node.js optimization script
+├── package.json            # Dependencies (sharp)
+├── README.md
+├── DEPLOYMENT.md
+└── SUMMARY.md
 ```
 
 ## 🎯 What Works Right Now
@@ -79,8 +76,8 @@ Reviewed **27 venue photos** and selected the **5 best for maximum impact**:
 - **Host Names**: Update "The Birthday Boy" and "The Other One" to actual names in "Ringleaders" section
 
 ### Optional
-- **Image Optimization**: Run `optimize-images.sh` to reduce ~18MB total
 - **Analytics**: Add Google Analytics tracking
+- **Remove Original Images**: Delete .png/.jpg files if WebP-only is acceptable
 
 ## 📸 Host Photos
 
