@@ -157,10 +157,17 @@ section {
     pointer-events: auto; 
 } /* Re-enable buttons/text select */
 
+.hero-content p {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
 .hero-content h1 {
-    font-size: 6.5rem;
+    font-size: 8.5rem;
     line-height: 1;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
@@ -168,19 +175,19 @@ section {
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .time-val {
-    font-size: 2rem;
+    font-size: 4rem;
     font-family: var(--font-head);
     color: var(--accent);
     display: block;
 }
 
 .time-label { 
-    font-size: 0.8rem; 
+    font-size: 1rem; 
     text-transform: uppercase; 
 }
 
@@ -346,6 +353,14 @@ textarea {
 @media (max-width: 768px) {
     .hero-content h1 { 
         font-size: 4rem; 
+    }
+    
+    .time-val {
+        font-size: 2.5rem;
+    }
+    
+    .countdown {
+        gap: 25px;
     }
     
     .vibe-grid, 
