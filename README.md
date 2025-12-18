@@ -19,17 +19,21 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 ```
 ├── index.html          # Main landing page
 ├── styles.css          # All styling
+├── favicon*.png/ico    # Favicons (multiple sizes)
+├── apple-touch-icon.png # iOS home screen icon
+├── robots.txt          # SEO configuration
+├── CNAME               # Custom domain config
 ├── images/             # Venue photos (WebP + originals)
 │   ├── *.webp          # Optimized images (~1.3MB total)
-│   ├── *.png/jpg       # Original images (~18MB)
-│   └── SETUP_NOTES.md
+│   └── *.png/jpg       # Original images (~18MB fallback)
 ├── optimize-images.js  # Image optimization script
-└── package.json        # Node dependencies
+└── package.json        # Node dependencies (sharp)
 ```
 
 ## ✨ Features
 
 - **WebP Images**: Optimized images with fallback support (93% size reduction)
+- **SEO Ready**: Favicons, robots.txt, meta tags for social sharing
 - **Countdown Timer**: Live countdown with timezone handling (BST)
 - **Dynamic Date Formatting**: Single source of truth for event date
 - **RSVP Form**: Google Sheets integration with consent checkbox & music requests
@@ -44,20 +48,29 @@ A sophisticated, industrial-chic landing page for a joint 40th birthday celebrat
 - **Color Scheme**: Dark mode with Grove Orange (#ff4d00) accents
 - **Aesthetic**: Industrial warehouse meets premium cocktail lounge
 
-## 📝 TODO
-
-- [ ] Add individual host portrait photos (currently placeholders)
-- [ ] Add actual host names to "The Ringleaders" section
-
 ## 🌐 Deployment
 
-**Live at:** www.86groove.space (custom domain via GitHub Pages)
+**Live at:** www.86groove.space (GitHub Pages + custom domain)
 
-Ready for GitHub Pages:
-1. Push to GitHub
-2. Enable Pages in repository settings
-3. Select `main` branch as source
-4. Configure custom domain in CNAME file
+### To Update
+```bash
+git add .
+git commit -m "Update description"
+git push origin main
+```
+Changes appear within 1-2 minutes.
+
+### Image Optimization
+Re-run optimization if adding new images:
+```bash
+npm install
+npm run optimize-images
+```
+
+## 📝 Still Needed
+
+- [ ] Add individual host portrait photos (currently placeholders)
+- [ ] Update host names in "The Ringleaders" section
 
 ## 📸 Image Credits
 
