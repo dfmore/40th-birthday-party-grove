@@ -16,9 +16,8 @@ Thumbs.db
 *.bak
 *~
 
-# Don't ignore images folder - we want these on GitHub
-!images/
-!images/*.png
-!images/*.jpg
-!images/*.jpeg
+# Dependencies
+node_modules/
 
+# Generated/build output
+images-optimized/
